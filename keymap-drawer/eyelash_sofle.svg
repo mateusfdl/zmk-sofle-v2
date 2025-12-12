@@ -215,38 +215,14 @@ svg.keymap {
   font-size: 12px;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  /* No background-color! Let it inherit */
-}
-
-/* Key background */
-rect.key {
-  fill: #2c2c2c;
-  stroke: #555;
-}
-
-/* FORCING ALL visible elements to be light iron color */
-text, 
-path, 
-.combo text, 
-.sym_sub_text, 
-.tap_dance, 
-.toggle, 
-.sym_by_sym, 
-.combo.sym_by_sym {
-  fill: #d2d6da;
 }
 
 /* Color accent for held keys */
 rect.held, rect.combo.held {
-  fill: #3c5d99;
+    fill: #ffc;
 }
 
-/* Combo background */
-rect.combo {
-  fill: #3a3a3a;
-  stroke: #666;
-}
-
+/* Technique borrowed and extended from https://github.com/englmaxi/zmk-config/blob/master/keymap-drawer/config.yaml */
 .sym_sub_text.tap {
   translate: -5px 2px;
   font-size: 20px;
@@ -265,6 +241,7 @@ rect.combo {
   opacity: 1.0;
 }
 
+/* Toggle */
 .toggle.shifted {
   translate: -10px 12px;
 }
@@ -273,6 +250,7 @@ rect.combo {
   translate: 13px -23px;
 }
 
+/* Variant for tap-dances */
 .tap_dance.tap {
   translate: -7px 0px;
   font-size: 12px;
@@ -283,6 +261,7 @@ rect.combo {
   opacity: 1.0;
 }
 
+/* Variant for symbol next to symbol */
 .sym_by_sym.tap {
   translate: -6px 0px;
 }
@@ -303,6 +282,7 @@ rect.combo {
   visibility: hidden;
 }
 
+/* hide hold box for combo sym_by_sym */
 .combo.sym_by_sym.hold > path[stroke="none"][fill="none"] {
   visibility: hidden;
 }
