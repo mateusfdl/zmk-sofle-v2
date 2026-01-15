@@ -1,0 +1,12 @@
+if SHIELD_EYELASH_SOFLE_DONGLE
+
+config ZMK_KEYBOARD_NAME
+    default "Eyelash Sofle"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_POINTING
+    default y
+
+endif

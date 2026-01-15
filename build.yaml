@@ -10,4 +10,4 @@ include:
   - board: eyelash_sofle_left
     shield: settings_reset
   - board: seeeduino_xiao_ble
-    shield: sofle_dongle prospector_adapter
+    shield: eyelash_sofle_dongle
