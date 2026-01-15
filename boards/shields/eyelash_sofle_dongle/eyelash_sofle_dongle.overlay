@@ -7,7 +7,7 @@
 
 / {
     chosen {
-        zmk,kscan = &kscan0;
+        zmk,kscan = &mock_kscan;
         zmk,matrix-transform = &default_transform;
     };
 
@@ -24,10 +24,10 @@
         >;
     };
 
-    kscan0: kscan {
-        compatible = "zmk,kscan-composite";
-
-        rows = <5>;
-        columns = <14>;
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
     };
 };
