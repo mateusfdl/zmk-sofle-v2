@@ -4,18 +4,16 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: m165437
       url-base: https://github.com/M165437
-    - name: carrefinho
-      url-base: https://github.com/carrefinho
   projects:
     - name: eyelash_sofle
       url: https://github.com/mateusfdl/zmk-sofle-v2
       revision: main
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3.0
+      revision: main
       import: app/west.yml
     - name: nice-view-gem
       remote: m165437
-      revision: 7794ebf7f7
+      revision: main
   self:
     path: boards
