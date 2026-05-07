@@ -17,8 +17,5 @@ manifest:
     - name: nice-view-gem
       remote: m165437
       revision: 7794ebf7f7
-    - name: prospector-zmk-module
-      remote: carrefinho
-      revision: main
   self:
     path: boards
