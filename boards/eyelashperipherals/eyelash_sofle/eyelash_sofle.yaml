@@ -1,20 +1,15 @@
 identifier: eyelash_sofle
 name: Eyelash Sofle
-url: https://github.com/mateusfdl/zmk-sofle-v2
-type: mcu
+type: keyboard
 arch: arm
 toolchain:
   - zephyr
   - gnuarmemb
   - xtools
-ram: 40
 supported:
   - adc
   - usb_device
   - ble
-  - ieee802154
-  - pwm
-  - watchdog
   - gpio
-  - i2c
+  - pwm
   - spi

@@ -7,9 +7,13 @@ arch: arm
 features:
   - keys
   - display
+  - encoder
+  - underglow
+  - backlight
+  - studio
 outputs:
   - usb
   - ble
 siblings:
-  - eyelash_sofle_left
-  - eyelash_sofle_right
+  - eyelash_sofle_left//zmk
+  - eyelash_sofle_right//zmk
