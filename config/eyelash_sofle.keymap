@@ -38,6 +38,107 @@
     behaviors {
     };
 
+    macros {
+        fat_arrow: fat_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp GT>;
+        };
+
+        thin_arrow: thin_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp GT>;
+        };
+
+        double_colon: double_colon {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp COLON>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_escape {
+            timeout-ms = <30>;
+            key-positions = <34 35>;
+            bindings = <&kp ESC>;
+            layers = <0>;
+        };
+
+        combo_tab {
+            timeout-ms = <30>;
+            key-positions = <14 15>;
+            bindings = <&kp TAB>;
+            layers = <0>;
+        };
+
+        combo_backspace {
+            timeout-ms = <30>;
+            key-positions = <23 24>;
+            bindings = <&kp BACKSPACE>;
+            layers = <0>;
+        };
+
+        combo_delete {
+            timeout-ms = <30>;
+            key-positions = <36 37>;
+            bindings = <&kp DELETE>;
+            layers = <0>;
+        };
+
+        combo_left_bracket {
+            timeout-ms = <30>;
+            key-positions = <41 42>;
+            bindings = <&kp LEFT_BRACKET>;
+            layers = <0>;
+        };
+
+        combo_right_bracket {
+            timeout-ms = <30>;
+            key-positions = <48 49>;
+            bindings = <&kp RIGHT_BRACKET>;
+            layers = <0>;
+        };
+
+        combo_left_brace {
+            timeout-ms = <30>;
+            key-positions = <43 44>;
+            bindings = <&kp LBRC>;
+            layers = <0>;
+        };
+
+        combo_right_brace {
+            timeout-ms = <30>;
+            key-positions = <46 47>;
+            bindings = <&kp RBRC>;
+            layers = <0>;
+        };
+
+        combo_fat_arrow {
+            timeout-ms = <30>;
+            key-positions = <29 30>;
+            bindings = <&fat_arrow>;
+            layers = <0>;
+        };
+
+        combo_thin_arrow {
+            timeout-ms = <30>;
+            key-positions = <30 31>;
+            bindings = <&thin_arrow>;
+            layers = <0>;
+        };
+
+        combo_double_colon {
+            timeout-ms = <30>;
+            key-positions = <35 36>;
+            bindings = <&double_colon>;
+            layers = <0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -56,38 +157,40 @@
 
         layer_1 {
             bindings = <
-&kp GRAVE   &kp F1           &kp F2          &kp F3           &kp F4           &kp F5             &mmv MOVE_UP     &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &trans
-&trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp UP      &kp HOME   &kp MINUS         &kp EQUAL
-&trans      &kp TILDE        &trans          &trans           &trans           &mkp MB5           &mmv MOVE_LEFT   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT  &kp F11    &kp F12           &trans
-&kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans      &trans     &trans
+&kp GRAVE   &trans    &trans    &trans    &trans  &trans    &trans  &trans          &trans           &trans    &trans     &trans    &trans
+&trans      &kp N1    &kp N2    &kp N3    &kp N4  &kp N5    &trans  &kp N6          &kp N7           &kp N8    &kp N9     &kp N0    &kp EQUAL
+&trans      &kp EXCL  &kp AT    &kp HASH  &kp DLLR &kp PRCNT &trans  &kp LEFT        &kp DOWN         &kp UP    &kp RIGHT  &kp MINUS &kp LEFT_BRACKET
+&trans      &kp TILDE &trans    &trans    &trans  &trans    &trans  &kp HOME        &kp LA(LEFT)     &kp LA(RIGHT) &kp END &kp RIGHT_BRACKET &trans
+&kp C_MUTE  &trans    &trans    &trans    &trans  &trans    &trans  &trans          &trans           &mo 3     &trans     &trans
             >;
 
-            display-name = "Symbol";
+            display-name = "Num/Nav";
             sensor-bindings = <&scroll_encoder>;
         };
 
         layer_2 {
-            display-name = "Controllers";
             bindings = <
-&kp TILDE       &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &mmv MOVE_UP     &kp F6  &kp F7  &kp F8      &kp F9     &kp F10      &trans
-&studio_unlock  &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans          &mmv MOVE_DOWN   &trans  &trans  &kp F11     &kp F12    &kp UNDER    &kp PLUS
-&trans          &out OUT_USB  &out OUT_BLE    &trans        &trans        &trans          &mmv MOVE_LEFT   &trans  &trans  &trans      &trans     &kp LBRC     &kp RBRC
-&trans          &sys_reset    &trans          &bootloader   &trans        &trans          &mmv MOVE_RIGHT  &trans  &trans  &sys_reset  &soft_off  &bootloader  &trans
-&trans          &trans        &trans          &trans        &trans        &trans          &mkp LCLK        &trans  &trans  &trans      &trans     &trans
+&kp TILDE  &trans    &trans    &trans    &trans    &trans     &trans  &trans     &trans     &trans         &trans             &trans     &caps_word
+&trans     &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT  &trans  &kp CARET  &kp AMPS   &kp ASTRK      &kp LPAR           &kp RPAR   &kp PLUS
+&trans     &kp GRAVE &kp FSLH  &kp BSLH  &kp PIPE  &kp EQUAL  &trans  &kp LBRC   &kp RBRC   &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp UNDER  &kp MINUS
+&trans     &kp LT    &kp GT    &kp APOS  &kp DQT   &kp SEMI   &trans  &kp COLON  &kp COMMA  &kp DOT        &kp QMARK          &trans     &trans
+&trans     &trans    &trans    &trans    &mo 3     &trans     &trans  &trans     &trans     &trans         &trans             &trans
             >;
 
+            display-name = "Symbols";
             sensor-bindings = <&scroll_encoder>;
         };
 
         layer_3 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans          &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans       &trans       &trans       &trans      &trans       &caps_word
+&studio_unlock  &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans          &trans  &out OUT_USB &out OUT_BLE &trans       &trans      &trans       &trans
+&trans          &rgb_ug RGB_OFF &rgb_ug RGB_ON &rgb_ug RGB_EFF &rgb_ug RGB_EFR &rgb_ug RGB_SPI &trans &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans &trans &trans &trans
+&trans          &sys_reset    &trans          &bootloader   &trans        &trans          &trans  &trans       &trans       &sys_reset   &soft_off   &bootloader  &trans
+&trans          &trans        &trans          &trans        &trans        &trans          &trans  &trans       &trans       &trans       &trans      &trans
             >;
+            display-name = "System";
+            sensor-bindings = <&scroll_encoder>;
         };
     };
 };
